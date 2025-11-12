@@ -1,0 +1,55 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+t_vec = np.array([1,2,3,4])
+v_vec = np.array([1,4,9,12])    
+a_vec = np.array([1,6,13,19])     
+ia_vec = np.array([1,15,30,45])        
+U_vec = np.array([1,2,4,7])          
+s_vec = np.array([1,20,50,100])
+
+#0 = ingen graf, 1 = fem separata, 2 = en sammanställd
+toggle = 2   #Ändra denna om du vill byta graf
+if toggle == 1:
+    plt.plot(t_vec,v_vec)
+    plt.title("Hastighet över tid")
+    plt.xlabel("Tid (s)")
+    plt.ylabel("Hastighet (m/s)")
+    plt.show()
+
+    plt.plot(t_vec,a_vec)
+    plt.title("Acceleration över tid")
+    plt.xlabel("Tid (s)")
+    plt.ylabel("Acceleration (m/s^2)")
+    plt.show()
+
+    plt.plot(t_vec,ia_vec)
+    plt.title("Ström över tid")
+    plt.xlabel("Tid (s)")
+    plt.ylabel("Ström (A)")
+    plt.show()
+
+    plt.plot(t_vec,U_vec)
+    plt.title("Spänning över tid")
+    plt.xlabel("Tid (s)")
+    plt.ylabel("Spänning (V)")
+    plt.show()
+
+    plt.plot(t_vec,s_vec)
+    plt.title("Sträcka över tid")
+    plt.xlabel("Tid (s)")
+    plt.ylabel("Sträcka (s)")
+    plt.show()
+#Om man vill ha allt i en graf:
+if toggle == 2:
+    plt.plot(t_vec, v_vec, label="Hastighet")
+    plt.plot(t_vec, a_vec, label="Acceleration")
+    plt.plot(t_vec, ia_vec, label="Ström")
+    plt.plot(t_vec, U_vec, label="Spänning")
+    plt.plot(t_vec, s_vec, label="Sträcka")
+    plt.title("Sammanställd graf")
+    plt.xlabel("Tid (s)")
+    plt.ylabel("Mätdata")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
